@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>自作検索プラグイン</title>
+    <link rel="search" type="application/opensearchdescription+xml" title="Google(完全一致、50件ずつ表示)" href="./material/google.xml">
+  </head>
+  <body>
+    <main id="main">
+      <h1>自作検索プラグイン</h1>
+      <div id="overview">
+        <h2>概要</h2>
+        <p>作成日: <time>2020-07-07</time></p>
+        <p>Firefoxでの使用を想定したOpenSearch description documentおよびWebExtensionです。</p>
+        <p>検索エンジンの追加方法などは、<a href="https://support.mozilla.org/ja/kb/add-or-remove-search-engine-firefox">Firefoxヘルプ</a>をご覧ください。</p>
+      </div>
+      <div id="specification">
+        <h2>仕様および注意事項</h2>
+        <p>これは作成者自身の需要を満たすために作成したものです。</p>
+        <p>検索エンジン名が既定のものと同名の場合は、追加できない仕様であるため、名前の後にゼロ幅スペースを追加しています。名前では見分けが付かないので、既定のものは事前に削除しておくか、気合で見分けてください。</p>
+        <p><a href="https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-image-element"><q lang="en" cite="https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#the-image-element">The value must be a URI.</q></a> とのことなので、faviconはbase64埋め込みではなく、URLを指定しています。</p>
+        <p>一応<a href="./material/LICENSE.txt">使用条件を書いておきます</a>。あくまでLICENSE.txtが存在するディレクトリが基準であり、このページには適用されない(暗黙のAll rights reserved)であることに注意。</p>
+      </div>
+      <div id="story">
+        <h2>公開に至った経緯など</h2>
+        <p>AddSearchProviderは手軽ですが、<a href="https://www.fxsitecompat.dev/ja/docs/2020/window-external-addsearchprovider-is-now-a-dummy-function/">Firefox 78にて虚無と化しました</a>。私は68 ESRを使用しているため、今はまだ使えますが、未来のない方法は取りたくありません。</p>
+        <p>ところが、正攻法である<code>&lt;link rel="search"(ry</code>はfileスキームでは反応せず、HTTPを通さねばなりませんでした。HTTPでさえあれば127.0.0.1でも良いのですが、ここに置くほうがいろいろと都合が良いので、そのようにしました。</p>
+        <p>FirefoxはCustomizableだとは言い難くなってきたように思います。<a href="https://help.vivaldi.com/article/search/#new">VivaldiはGUIで簡単設定できる</a>ようなので、気持ちが揺らいでおります。</p>
+      </div>
+      <div id="webextension">
+        <h2>せっかくなのでWebExtension版も作ってみた</h2>
+        <p><a href="https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/manifest.json/chrome_settings_overrides">いい感じにmanifest.jsonを書いて</a>、<a href="https://thenewsinpu.hatenablog.jp/entry/2018/05/17/225807">zipで固めて、AMOで署名してもらう</a>だけでした。…それが地味に面倒なんだけど^^;</p>
+        <ul>
+          <li><a href="./signed-xpi/google_search_for_dekisugi-1-fx.xpi">Google Search for dekisugi</a></li>
+        </ul>
+      </div>
+    </main>
+    <footer id="site-footer">
+      <address id="site-admin">
+        <p>作成者: <a href="https://geeko.dev/contacts.html">出来杉君</a></p>
+      </address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/"
+                       xml:lang="ja">
+  <Language>ja-jp</Language>
+  <ShortName>Google&#8203;</ShortName>
+  <Description>Google(完全一致、50件ずつ表示)</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="32" height="32" type="image/vnd.microsoft.icon">https://www.google.co.jp/favicon.ico</Image>
+  <Url type="text/html" method="GET" template="https://www.google.co.jp/search?q={searchTerms}&amp;hl=ja&amp;tbs=li:1&amp;num=50"/>
+  <Url type="application/x-suggestions+json" template="https://www.google.co.jp/complete/search?q={searchTerms}&amp;hl=ja&amp;client=firefox"/>
+  <moz:SearchForm>https://www.google.co.jp/?hl=ja&amp;tbs=li:1&amp;num=50</moz:SearchForm>
+  <Developer>https://geeko.dev/</Developer>
+</OpenSearchDescription>

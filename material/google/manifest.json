@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "google-search@firefox-addons.geeko.dev",
+      "strict_min_version": "55.0"
+    }
+  },
+
+  "developer": {
+    "name": "dekisugi",
+    "url": "https://geeko.dev/"
+  },
+
+  "name": "Google Search for dekisugi",
+  "version": "1",
+
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "Google\u200B",
+      "encoding": "UTF-8",
+      "search_url":  "https://www.google.co.jp/search?q={searchTerms}&hl=ja&tbs=li:1&num=50",
+      "suggest_url": "https://www.google.co.jp/complete/search?q={searchTerms}&hl=ja&client=firefox",
+      "favicon_url": "https://www.google.co.jp/favicon.ico"
+    }
+  }
+}
